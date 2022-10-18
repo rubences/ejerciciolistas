@@ -77,3 +77,43 @@ def ejercicio2():
     # TODO
     assert lista == list(range(1, 6))
 
+# ejemplo de assert
+def calcula_media(lista):
+    return sum(lista)/len(lista)
+
+assert(calcula_media([5, 10, 7.5]) == 7.5)
+assert(calcula_media([4, 8]) == 6)
+
+# Funcion suma de variables enteras
+def suma(a, b):
+    assert(type(a) == int)
+    assert(type(b) == int)
+    return a+b
+
+# Error, ya que las variables no son int
+#suma(3.0, 5.0)
+
+# Ok, los argumentos son int
+suma(3, 5)
+
+# con clases assert
+class MiClase():
+    pass
+
+class MiOtraClase():
+    pass
+
+mi_objeto = MiClase()
+mi_otro_objeto = MiOtraClase()
+
+# Ok
+assert(isinstance(mi_objeto, MiClase))
+
+# Ok
+assert(isinstance(mi_otro_objeto, MiOtraClase))
+
+# Error, mi_objeto no pertenece a MiOtraClase
+#assert(isinstance(mi_objeto, MiOtraClase))
+
+# Error, mi_otro_objeto no pertenece a MiClase
+#assert(isinstance(mi_otro_objeto, MiClase))
